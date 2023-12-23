@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import yfinance as yf
 import plotly.express as px
 from sklearn.preprocessing import MinMaxScaler
@@ -61,13 +61,17 @@ close_df['Predicted Price']=tp
 st.write(close_df)
 
 
+
 st.header("Orginal Vs Predicted Price")
-fig2=plt.figure(figsize=(8,6))
-plt.plot(close_df['Close'], color='green', label='Orginal Price')
-plt.plot(close_df['Predicted Price'], color='red', label='Predicted Price')
-plt.legend()
-plt.show()
+st.header("Orginal Vs Predicted Price")
+fig2=px.line(close_df, x=close_df.index, y=['Close','Predicted Price'])
 st.plotly_chart(fig2)
+#fig2=plt.figure(figsize=(8,6))
+#plt.plot(close_df['Close'], color='green', label='Orginal Price')
+#plt.plot(close_df['Predicted Price'], color='red', label='Predicted Price')
+#plt.legend()
+#plt.show()
+#st.plotly_chart(fig2)
 
 st.header("Predicted Next Day Price")
 df23=df1.copy()
