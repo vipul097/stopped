@@ -7,3 +7,4 @@ keras
 tensorflow
 plotly
 scikit-learn
+yfinance
