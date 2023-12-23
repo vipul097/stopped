@@ -6,4 +6,3 @@ keras
 tensorflow
 plotly
 sklearn
-pip install --upgrade pip
